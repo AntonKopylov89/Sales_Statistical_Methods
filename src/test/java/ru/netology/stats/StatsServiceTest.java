@@ -55,7 +55,7 @@ public class StatsServiceTest {
     public void shouldFindNumMonLowAvg() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int actual = service.numMonLowAvgSales(sales);
         int expected = 5;
 
@@ -66,7 +66,7 @@ public class StatsServiceTest {
     public void shouldFindNumMonHighAvg() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int actual = service.numMonHighAvgSales(sales);
         int expected = 5;
 

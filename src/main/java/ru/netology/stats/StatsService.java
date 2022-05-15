@@ -35,45 +35,24 @@ public class StatsService {
     }
 
     public int avgSales(long[] sales) {
-        int sum = 0;
-        int avg = 0;
-        for (long sale : sales) {
-            sum += sale;
-            avg = sum / 12;
-        }
+        int avg = sumSales(sales) / 12;
         return avg;
     }
 
-    public int numMonLowAvgSales(int[] sales) {
+    public int numMonLowAvgSales(long[] sales) {
         int numMon = 0;
-        int sum = 0;
-        int avg = 0;
-
         for (long sale : sales) {
-            sum += sale;
-            avg = sum / 12;
-        }
-
-        for (long sale : sales) {
-            if (sale < avg) {
+            if (sale < avgSales(sales)) {
                 numMon++;
             }
         }
         return numMon;
     }
 
-    public int numMonHighAvgSales(int[] sales) {
+    public int numMonHighAvgSales(long[] sales) {
         int numMon = 0;
-        int sum = 0;
-        int avg = 0;
-
         for (long sale : sales) {
-            sum += sale;
-            avg = sum / 12;
-        }
-
-        for (long sale : sales) {
-            if (sale > avg) {
+            if (sale > avgSales(sales)) {
                 numMon++;
             }
         }
